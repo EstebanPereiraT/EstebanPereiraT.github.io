@@ -9,7 +9,7 @@ seo:
 
 <div style="position: relative; width: 100%; padding-top: 56.25%; margin: 2rem 0; border-radius: 0.75rem; overflow: hidden;">
   <iframe
-    src="https://www.youtube-nocookie.com/embed/REVP7WjkISM"
+    src="https://www.youtube.com/shorts/XWF0nEbJl5Y"
     title="Presentación de Jhoan Esteban Pereira"
     style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;"
     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
