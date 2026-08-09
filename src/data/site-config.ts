@@ -53,17 +53,12 @@ const siteConfig: SiteConfig = {
     ],
     hero: {
         title: '¡Hola! Bienvenido a mi rincón en la web',
-        text: "Soy **Jhoan Esteban Pereira Torres**, estudiante de Ingeniería de Sistemas en la Universidad El Bosque, apasionado por la programación y con una historia marcada por la disciplina del deporte de alto rendimiento.\nDurante años competí en patinaje de velocidad a nivel juvenil y mayores, una experiencia que me enseñó que la constancia es la clave para lograr cualquier meta — algo que hoy aplico en mi formación como futuro ingeniero.\n\nConoce más sobre mi historia en la sección [Acerca de mí](/about), o sígueme en [Instagram](https://www.instagram.com/jhoan_estp).",
+        text: "Soy **Jhoan Esteban Pereira Torres**, estudiante de Ingeniería de Sistemas en la Universidad El Bosque, apasionado por la programación y con una historia marcada por la disciplina del deporte de alto rendimiento.\nDurante años competí en patinaje de velocidad a nivel juvenil y mayores, una experiencia que me enseñó que la constancia es la clave para lograr cualquier meta — algo que hoy aplico en mi formación como futuro ingeniero.\n\nSígueme en [Instagram](https://www.instagram.com/jhoan_estp).",
         image: {
             src: '/hero.jpg',
             alt: 'Jhoan Esteban Pereira Torres'
         },
-        actions: [
-            {
-                text: 'Conóceme más',
-                href: '/about'
-            }
-        ]
+        actions: []
     },
     subscribe: {
         enabled: false,
