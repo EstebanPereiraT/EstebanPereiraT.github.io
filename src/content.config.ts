@@ -1,54 +1,75 @@
-import { glob } from 'astro/loaders';
-import { z } from 'astro/zod';
-import { defineCollection, type ImageFunction } from 'astro:content';
+import type { SiteConfig } from '../types';
 
-const imageSchema = (image: ImageFunction) =>
-    z.object({
-        src: image(),
-        alt: z.string().optional()
-    });
+const siteConfig: SiteConfig = {
+    website: 'https://EstebanPereiraT.github.io',
+    avatar: {
+        src: '/avatar.jpg',
+        alt: 'Jhoan Esteban Pereira Torres'
+    },
+    title: 'Jhoan Esteban Pereira',
+    subtitle: 'Estudiante de Ingeniería de Sistemas',
+    description: 'Portafolio y blog personal de Jhoan Esteban Pereira Torres, estudiante de Ingeniería de Sistemas.',
+    image: {
+        src: '/dante-preview.jpg',
+        alt: 'Jhoan Esteban Pereira Torres'
+    },
+    headerNavLinks: [
+        {
+            text: 'Inicio',
+            href: '/'
+        },
+        {
+            text: 'Proyectos',
+            href: '/projects'
+        },
+        {
+            text: 'Blog',
+            href: '/blog'
+        },
+        {
+            text: 'Etiquetas',
+            href: '/tags'
+        }
+    ],
+    footerNavLinks: [
+        {
+            text: 'Acerca de mí',
+            href: '/about'
+        },
+        {
+            text: 'Contacto',
+            href: '/contact'
+        },
+        {
+            text: 'Términos',
+            href: '/terms'
+        }
+    ],
+    socialLinks: [
+        {
+            text: 'Instagram',
+            href: 'https://www.instagram.com/jhoan_estp'
+        }
+    ],
+    hero: {
+        title: '¡Hola! Bienvenido a mi rincón en la web',
+        text: "Soy **Jhoan Esteban Pereira Torres**, estudiante de Ingeniería de Sistemas en la Universidad El Bosque, apasionado por la programación y con una historia marcada por la disciplina del deporte de alto rendimiento.\nDurante años competí en patinaje de velocidad a nivel juvenil y mayores, una experiencia que me enseñó que la constancia es la clave para lograr cualquier meta — algo que hoy aplico en mi formación como futuro ingeniero.\n\nSígueme en [Instagram](https://www.instagram.com/jhoan_estp).",
+        image: {
+            src: '/hero.jpg',
+            alt: 'Jhoan Esteban Pereira Torres'
+        },
+        actions: []
+    },
+    subscribe: {
+        enabled: false,
+        title: 'Suscríbete',
+        text: 'Recibe mis publicaciones más recientes directamente en tu correo.',
+        form: {
+            action: '#'
+        }
+    },
+    postsPerPage: 8,
+    projectsPerPage: 8
+};
 
-const seoSchema = (image: ImageFunction) =>
-    z.object({
-        title: z.string().min(5).max(120).optional(),
-        description: z.string().min(15).max(160).optional(),
-        image: imageSchema(image).optional(),
-        pageType: z.enum(['website', 'article']).optional()
-    });
-
-const blog = defineCollection({
-    loader: glob({ pattern: '**/*.{md,mdx}', base: './src/content/blog' }),
-    schema: ({ image }) =>
-        z.object({
-            title: z.string(),
-            excerpt: z.string().optional(),
-            publishDate: z.coerce.date(),
-            updatedDate: z.coerce.date().optional(),
-            isFeatured: z.boolean().default(false),
-            tags: z.array(z.string()).default([]),
-            seo: seoSchema(image).optional()
-        })
-});
-
-const pages = defineCollection({
-    loader: glob({ pattern: '**/*.{md,mdx}', base: './src/content/pages' }),
-    schema: ({ image }) =>
-        z.object({
-            title: z.string(),
-            seo: seoSchema(image).optional()
-        })
-});
-
-const projects = defineCollection({
-    loader: glob({ pattern: '**/*.{md,mdx}', base: './src/content/projects' }),
-    schema: ({ image }) =>
-        z.object({
-            title: z.string(),
-            description: z.string().optional(),
-            publishDate: z.coerce.date(),
-            isFeatured: z.boolean().default(false),
-            seo: seoSchema(image).optional()
-        })
-});
-
-export const collections = { blog, pages, projects };
+export default siteConfig;
