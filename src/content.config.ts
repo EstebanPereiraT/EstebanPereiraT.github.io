@@ -35,8 +35,7 @@ const siteConfig: SiteConfig = {
         {
             text: 'Acerca de mí',
             href: '/about'
-        },
-       
+        }
     ],
     socialLinks: [
         {
@@ -53,6 +52,16 @@ const siteConfig: SiteConfig = {
         },
         actions: []
     },
-  
+    subscribe: {
+        enabled: false,
+        title: 'Suscríbete',
+        text: 'Recibe mis publicaciones más recientes directamente en tu correo.',
+        form: {
+            action: '#'
+        }
+    },
+    postsPerPage: 8,
+    projectsPerPage: 8
+};
 
 export default siteConfig;
