@@ -7,16 +7,23 @@ import ProjectPreview from '../components/ProjectPreview.astro';
 import siteConfig from '../data/site-config';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { sortItemsByDateDesc } from '../utils/data-utils';
-
 const posts = (await getCollection('blog')).sort(sortItemsByDateDesc);
 const featuredPosts = posts.filter(({ data }) => data.isFeatured);
-
 const projects = (await getCollection('projects')).sort(sortItemsByDateDesc);
 const featuredProjects = projects.filter(({ data }) => data.isFeatured);
 ---
-
 <BaseLayout description={siteConfig.description}>
     <Hero {...siteConfig.hero} />
+    <div class="mb-16 sm:mb-24">
+        <video
+            class="w-full rounded-xl"
+            src="/presentacion.mp4"
+            controls
+            preload="metadata"
+        >
+            Tu navegador no soporta el elemento de video.
+        </video>
+    </div>
     {
         featuredProjects?.length > 0 && (
             <div class="mb-16 sm:mb-24">
