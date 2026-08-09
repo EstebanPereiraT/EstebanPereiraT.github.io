@@ -36,14 +36,7 @@ const siteConfig: SiteConfig = {
             text: 'Acerca de mí',
             href: '/about'
         },
-        {
-            text: 'Contacto',
-            href: '/contact'
-        },
-        {
-            text: 'Términos',
-            href: '/terms'
-        }
+       
     ],
     socialLinks: [
         {
@@ -53,23 +46,13 @@ const siteConfig: SiteConfig = {
     ],
     hero: {
         title: '¡Hola! Bienvenido a mi rincón en la web',
-        text: "Soy **Jhoan Esteban Pereira Torres**, estudiante de Ingeniería de Sistemas en la Universidad El Bosque, apasionado por la programación y con una historia marcada por la disciplina del deporte de alto rendimiento.\nDurante años competí en patinaje de velocidad a nivel juvenil y mayores, una experiencia que me enseñó que la constancia es la clave para lograr cualquier meta — algo que hoy aplico en mi formación como futuro ingeniero.\n\nSígueme en [Instagram](https://www.instagram.com/jhoan_estp).",
+        text: "Soy **Jhoan Esteban Pereira Torres**, estudiante de Ingeniería de Sistemas en la Universidad El Bosque, apasionado por la programación y con una historia marcada por la disciplina del deporte de alto rendimiento.\nDurante años competí en patinaje de velocidad a nivel juvenil y mayores, una experiencia que me enseñó que la constancia es la clave para lograr cualquier meta — algo que hoy aplico en mi formación como futuro ingeniero.",
         image: {
             src: '/hero.jpg',
             alt: 'Jhoan Esteban Pereira Torres'
         },
         actions: []
     },
-    subscribe: {
-        enabled: false,
-        title: 'Suscríbete',
-        text: 'Recibe mis publicaciones más recientes directamente en tu correo.',
-        form: {
-            action: '#'
-        }
-    },
-    postsPerPage: 8,
-    projectsPerPage: 8
-};
+  
 
 export default siteConfig;
