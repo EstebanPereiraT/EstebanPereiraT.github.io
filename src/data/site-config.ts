@@ -33,20 +33,7 @@ const siteConfig: SiteConfig = {
             href: '/tags'
         }
     ],
-    footerNavLinks: [
-        {
-            text: 'Acerca de mí',
-            href: '/about'
-        },
-        {
-            text: 'Contacto',
-            href: '/contact'
-        },
-        {
-            text: 'Términos',
-            href: '/terms'
-        }
-    ],
+   
     socialLinks: [
         {
             text: 'Instagram',
