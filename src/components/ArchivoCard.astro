@@ -1,0 +1,42 @@
+---
+import type { Archivo } from '../data/portafolio';
+import Button from './Button.astro';
+
+type Props = { archivo: Archivo; numero?: number };
+
+const { archivo, numero } = Astro.props;
+
+const ext = archivo.ruta.split('.').pop()?.toLowerCase() ?? '';
+const esImagen = ['png', 'jpg', 'jpeg', 'webp', 'gif'].includes(ext);
+const sePuedeVer = esImagen || ext === 'pdf'; // el navegador los abre directamente
+---
+
+<article class="border-main flex flex-col gap-4 rounded-xl border border-dashed p-4 sm:flex-row sm:p-5">
+    {
+        esImagen && (
+            <a href={archivo.ruta} target="_blank" rel="noopener noreferrer" class="sm:w-40 sm:shrink-0">
+                <img src={archivo.ruta} alt={archivo.nombre} loading="lazy" class="bg-muted h-40 w-full rounded-lg object-cover sm:h-28" />
+            </a>
+        )
+    }
+    <div class="min-w-0 grow">
+        <div class="flex flex-wrap items-center gap-2">
+            <h3 class="font-serif text-xl leading-tight font-medium">
+                {numero !== undefined && <span class="mr-1 italic opacity-60">{numero}.</span>}
+                {archivo.nombre}
+            </h3>
+            <span class="border-main rounded-full border px-2 text-xs uppercase">{ext}</span>
+        </div>
+        <p class="mt-2 text-sm leading-normal">{archivo.descripcion}</p>
+        <div class="mt-4 flex flex-wrap gap-3">
+            {
+                sePuedeVer && (
+                    <Button href={archivo.ruta} target="_blank" rel="noopener noreferrer" class="px-4 py-1 text-sm">
+                        Ver
+                    </Button>
+                )
+            }
+            <Button href={archivo.ruta} download class="px-4 py-1 text-sm">Descargar</Button>
+        </div>
+    </div>
+</article>

@@ -1,0 +1,24 @@
+---
+import ArchivoCard from '../components/ArchivoCard.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { ejercicios } from '../data/portafolio';
+---
+
+<BaseLayout title="Ejercicios" description="Talleres y ejercicios de la universidad" showHeader={false}>
+    <h1 class="mb-4 font-serif text-2xl leading-tight italic sm:text-4xl">Ejercicios</h1>
+    <p class="mb-12 sm:mb-16">Talleres y ejercicios que he realizado, organizados por tema y cada uno con una breve explicación.</p>
+
+    {
+        ejercicios.map((grupo) => (
+            <section class="mb-16 sm:mb-24">
+                <h2 class="font-serif text-xl italic sm:text-2xl">{grupo.titulo}</h2>
+                <p class="mt-1 mb-8 text-sm">{grupo.descripcion}</p>
+                <div class="grid gap-5">
+                    {grupo.archivos.map((archivo) => (
+                        <ArchivoCard archivo={archivo} />
+                    ))}
+                </div>
+            </section>
+        ))
+    }
+</BaseLayout>

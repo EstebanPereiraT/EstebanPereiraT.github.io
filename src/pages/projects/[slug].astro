@@ -1,0 +1,32 @@
+---
+import ArchivoCard from '../../components/ArchivoCard.astro';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { proyectos } from '../../data/portafolio';
+
+export function getStaticPaths() {
+    return proyectos.map((proyecto) => ({
+        params: { slug: proyecto.slug },
+        props: { proyecto }
+    }));
+}
+
+const { proyecto } = Astro.props;
+---
+
+<BaseLayout title={proyecto.titulo} description={proyecto.descripcion} showHeader={false}>
+    <p class="mb-8 text-sm"><a href="/projects" class="hover:underline hover:underline-offset-2">← Volver a proyectos</a></p>
+    <h1 class="mb-6 font-serif text-3xl leading-tight font-medium sm:text-5xl sm:leading-tight">{proyecto.titulo}</h1>
+    <p class="mb-6 leading-relaxed">{proyecto.descripcion}</p>
+    {
+        proyecto.aviso && (
+            <div class="border-main bg-muted mb-12 rounded-xl border p-4 text-sm leading-normal sm:mb-16">
+                <strong class="font-serif text-base italic">Importante: </strong>
+                {proyecto.aviso}
+            </div>
+        )
+    }
+    <h2 class="mb-8 font-serif text-xl italic sm:text-2xl">Archivos del proyecto (en orden)</h2>
+    <div class="mb-16 grid gap-5 sm:mb-24">
+        {proyecto.archivos.map((archivo, i) => <ArchivoCard archivo={archivo} numero={i + 1} />)}
+    </div>
+</BaseLayout>

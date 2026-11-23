@@ -1,0 +1,30 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ArrowRight from '../../assets/icons/arrow-right.svg';
+import { proyectos } from '../../data/portafolio';
+---
+
+<BaseLayout title="Proyectos" description="Mis proyectos de la universidad" showHeader={false}>
+    <h1 class="mb-4 font-serif text-2xl leading-tight italic sm:text-4xl">Proyectos</h1>
+    <p class="mb-12 sm:mb-16">Entra a un proyecto para ver todos sus archivos con una breve explicación.</p>
+
+    {
+        proyectos.map((p) => (
+            <a href={`/projects/${p.slug}/`} class="group mb-10 block sm:mb-12">
+                {p.portada && <img src={p.portada} alt={p.titulo} loading="lazy" class="mb-4 h-56 w-full rounded-xl object-cover sm:h-72" />}
+                <div class="flex items-start justify-between gap-8">
+                    <div class="grow">
+                        <h2 class="font-serif text-xl leading-tight font-medium group-hover:underline group-hover:decoration-dashed group-hover:decoration-1 group-hover:underline-offset-4 sm:text-2xl">
+                            {p.titulo}
+                        </h2>
+                        <div class="mt-1 text-sm leading-normal">{p.descripcion}</div>
+                        <div class="mt-2 text-sm italic opacity-70">{p.archivos.length} archivos</div>
+                    </div>
+                    <div class="hidden font-serif italic opacity-0 transition group-hover:opacity-100 sm:inline-flex sm:shrink-0 sm:items-center sm:gap-1">
+                        Ver proyecto <ArrowRight class="h-4 w-4 fill-current" />
+                    </div>
+                </div>
+            </a>
+        ))
+    }
+</BaseLayout>
