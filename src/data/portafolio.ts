@@ -32,7 +32,7 @@ export const proyectos: Proyecto[] = [
         descripcion:
             'Proyecto final de Bases de Datos 1 (Universidad El Bosque), realizado en grupo con Kevyn Cárdenas y Susan Uriza. Consiste en el diseño de una base de datos para registrar y analizar la evasión del pago en TransMilenio.',
         aviso: 'Este proyecto corresponde únicamente al diseño de la base de datos (análisis, modelos y consultas en papel). No se implementó ni se programó el sistema.',
-        portada: '/proyectos/sirec/mer-proyecto-final.png',
+        portada: '/proyectos/sirec/portada-transmilenio.jpg',
         archivos: [
             {
                 nombre: 'Documento de supuestos',
