@@ -82,7 +82,7 @@ export const ejercicios: GrupoEjercicios[] = [
             {
                 nombre: 'Álgebra relacional – solución',
                 descripcion: 'Mi desarrollo del taller: cada consulta resuelta con proyección, selección, reuniones y relaciones temporales.',
-                ruta: '/ejercicios/algebra-relacional-solucion.docx'
+                ruta: '/ejercicios/algebra-relacional-solucion.pdf'
             }
         ]
     },
@@ -91,14 +91,14 @@ export const ejercicios: GrupoEjercicios[] = [
         descripcion: 'Llevar tablas hasta la tercera forma normal (1FN, 2FN y 3FN).',
         archivos: [
             {
-                nombre: 'Taller de normalización (PDF)',
-                descripcion: 'Normalización de un esquema de citas médicas: se revisan dependencias parciales y transitivas hasta llegar a 3FN.',
+                nombre: 'Taller de normalización – citas médicas (completo)',
+                descripcion: 'Taller completo sobre un esquema de citas médicas: dependencias funcionales, problemas de 2FN y 3FN, tablas resultantes y respuestas a las preguntas de cada esquema.',
                 ruta: '/ejercicios/taller-normalizacion-citas.pdf'
             },
             {
-                nombre: 'Taller de normalización (Word)',
-                descripcion: 'Versión editable del taller de citas médicas, con las respuestas sobre 2FN y 3FN.',
-                ruta: '/ejercicios/taller-normalizacion-citas.docx'
+                nombre: 'Taller de normalización – partes 1 y 2',
+                descripcion: 'Versión inicial del taller de citas médicas, con el análisis de dependencias de las partes 1 y 2.',
+                ruta: '/ejercicios/taller-normalizacion-citas-partes-1-2.pdf'
             },
             {
                 nombre: 'Normalización de esquemas',
@@ -108,7 +108,7 @@ export const ejercicios: GrupoEjercicios[] = [
             {
                 nombre: 'Ejercicio de repaso de normalización',
                 descripcion: 'Enunciado del repaso: identificar la forma normal de cada tabla y convertirla a 3FN justificando cada decisión.',
-                ruta: '/ejercicios/taller-normalizacion-repaso.docx'
+                ruta: '/ejercicios/taller-normalizacion-repaso.pdf'
             },
             {
                 nombre: 'Normalización – solución del repaso',
@@ -140,6 +140,58 @@ export const ejercicios: GrupoEjercicios[] = [
                 nombre: 'Reducción a tablas – zoológico',
                 descripcion: 'Diagrama con el resultado de reducir a tablas el caso de un zoológico.',
                 ruta: '/ejercicios/reduccion-tablas-zoologico.png'
+            }
+        ]
+    },
+    {
+        titulo: 'MER y MER extendido',
+        descripcion: 'Modelos entidad-relación de dos casos (tienda en línea y gestión académica), cada uno con su versión base y su versión extendida.',
+        archivos: [
+            {
+                nombre: 'MER 1 – Tienda en línea',
+                descripcion: 'Modelo entidad-relación base de una tienda en línea: clientes, direcciones (entidad débil), categorías, productos y pedidos con su detalle.',
+                ruta: '/ejercicios/mer/er-1-tienda-en-linea.png'
+            },
+            {
+                nombre: 'MER 1 – Tienda en línea (extendido)',
+                descripcion: 'Versión extendida de la tienda: agrega marca, bodega, inventario, empleado (con jefe), cupón, transportadora y devolución.',
+                ruta: '/ejercicios/mer/er-1-tienda-en-linea-extendido.png'
+            },
+            {
+                nombre: 'MER 2 – Gestión académica',
+                descripcion: 'Modelo entidad-relación base de una universidad: facultades, programas, estudiantes, profesores, materias, grupos, inscripciones y horarios (entidad débil).',
+                ruta: '/ejercicios/mer/er-2-gestion-academica.png'
+            },
+            {
+                nombre: 'MER 2 – Gestión académica (extendido)',
+                descripcion: 'Versión extendida de la universidad: agrega departamentos, prerrequisitos (relación recursiva), sedes, becas, biblioteca, pagos y evaluaciones con sus notas.',
+                ruta: '/ejercicios/mer/er-2-gestion-academica-extendido.png'
+            }
+        ]
+    },
+    {
+        titulo: 'SQL',
+        descripcion: 'Creación de tablas, inserción de datos y consultas en SQL (MySQL y PostgreSQL) a partir de los modelos entidad-relación anteriores.',
+        archivos: [
+            {
+                nombre: 'SQL 1 – Tienda en línea',
+                descripcion: 'Creación de las tablas de la tienda en línea, sus datos y la solución de las peticiones con sentencias SQL (consultas, INSERT, UPDATE y DELETE).',
+                ruta: '/ejercicios/sql/sql-1-tienda-en-linea.pdf'
+            },
+            {
+                nombre: 'SQL 2 – Gestión académica',
+                descripcion: 'Tablas, datos y peticiones SQL del modelo de gestión académica de una universidad, incluyendo inscripciones y plan de estudios.',
+                ruta: '/ejercicios/sql/sql-2-gestion-academica.pdf'
+            },
+            {
+                nombre: 'SQL 3 – Tienda en línea (extendido)',
+                descripcion: 'Ejercicios SQL sobre el modelo extendido de la tienda: inventario por bodega, transportadora, cupones, empleados con jefe y devoluciones.',
+                ruta: '/ejercicios/sql/sql-3-tienda-en-linea-extendido.pdf'
+            },
+            {
+                nombre: 'SQL 4 – Gestión académica (extendido)',
+                descripcion: 'Ejercicios SQL sobre el modelo extendido de la universidad: departamentos, prerrequisitos, sedes, becas, préstamos de libros, pagos y evaluaciones.',
+                ruta: '/ejercicios/sql/sql-4-gestion-academica-extendido.pdf'
             }
         ]
     }
